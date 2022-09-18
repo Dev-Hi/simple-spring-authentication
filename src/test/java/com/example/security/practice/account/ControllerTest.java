@@ -37,4 +37,16 @@ public class ControllerTest {
         mvc.perform(get("/hello")).andExpect(status().isUnauthorized());
     }
 
+    @Test @DisplayName("사용자명이 user일 때, /admin에 요청하면 403 forbidden를 받는다.")
+    @WithUserDetails
+    public void test4() throws Exception {
+        mvc.perform(get("/admin")).andExpect(status().isForbidden());
+    }
+
+    @Test @DisplayName("사용자명이 admin일 때, /admin에 요청하면 200 OK를 받는다.")
+    @WithUserDetails(value = "admin")
+    public void test5() throws Exception {
+        mvc.perform(get("/admin")).andExpect(status().isOk());
+    }
+
 }
