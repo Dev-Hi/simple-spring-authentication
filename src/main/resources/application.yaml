@@ -3,3 +3,7 @@ datasource:
   url: jdbc:h2:~/test
   username: sa
   password: sa
+
+jwt:
+  secret: aS1sb3ZlLXByb2dyYW1pbmctYnV0LWktZG9udC1saWtlLXNob3BwaW5naS1sb3ZlLXByb2dyYW1pbmctYnV0LWktZG9udC1saWtlLXNob3BwaW5naS1sb3ZlLXByb2dyYW1pbmctYnV0LWktZG9udC1saWtlLXNob3BwaW5n
+  tokenLifeTime: 86400000
